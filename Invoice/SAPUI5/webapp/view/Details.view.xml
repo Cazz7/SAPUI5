@@ -1,9 +1,23 @@
 <mvc:View   controllerName="logaligroup.SAPUI5.controller.Details"
             xmlns="sap.m" 
             xmlns:mvc="sap.ui.core.mvc"
+            xmlns:core="sap.ui.core"
+            xmlns:logali="logaligroup.SAPUI5.control"
             displayBlock="true">             
-    <Page title="{i18n>detailsPageTitle}">
-        <ObjectHeader title="Invoice">
+    <Page title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+        <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}">
+            <attributes>
+                <ObjectAttribute text="{northwind>ShipName}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>ShipAddress}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>ShipCity}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>ShipRegion}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>ShipPostalCode}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>ShipCountry}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>CustomerID}"></ObjectAttribute>
+                <ObjectAttribute text="{northwind>CustomerName}"></ObjectAttribute>
+            </attributes>
         </ObjectHeader>
+        <logali:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" 
+        change="onRatingChange"/>
     </Page>                    
 </mvc:View>

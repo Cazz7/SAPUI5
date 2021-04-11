@@ -25,13 +25,16 @@ function(UIComponent, Models, ResourceModel, HelloDialog){
 
             //set data model on the view. View is not necessary
             this.setModel(Models.createRecipient());
-            //set i18n model on the view
-            var i18nModel = new ResourceModel({ bundleName : "logaligroup.SAPUI5.i18n.i18n"});
-            this.setModel(i18nModel,"i18n");
+            //set i18n model on the view (No longer necessary)
+            //var i18nModel = new ResourceModel({ bundleName : "logaligroup.SAPUI5.i18n.i18n"});
+            //this.setModel(i18nModel,"i18n");
 
             //Instance of managed Object
             //We have to add the instance of the view in runtime
             this._helloDialog = new HelloDialog(this.getRootControl());
+
+            //create the views based on the url/hash
+            this.getRouter().initialize();
         },
         //To free up the resources we have used
         exit: function(){
