@@ -33,6 +33,9 @@ function(UIComponent, Models, ResourceModel, HelloDialog){
             //We have to add the instance of the view in runtime
             this._helloDialog = new HelloDialog(this.getRootControl());
 
+            //Set the device model
+            this.setModel(Models.createDeviceModel(), "device");            
+
             //create the views based on the url/hash
             this.getRouter().initialize();
         },

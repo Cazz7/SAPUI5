@@ -3,7 +3,9 @@
                             xmlns:f="sap.ui.layout.form">
     <Panel headerText="{i18n>panelFrTitle}" 
     class="sapUiResponsiveMargin"
-    width="50%">
+    width="50%"
+    expandable="{device>/system/phone}"
+    expanded="{= !${device>/system/phone} }"> <!-- true if not on phone -->    
         <f:SimpleForm id="form" editable="true" >
             <f:content>
                 <Label text="{i18n>labelPerson}" labelFor="persName"/>

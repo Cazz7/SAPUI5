@@ -4,8 +4,10 @@
             xmlns:core="sap.ui.core"
             displayBlock="true">
     <Panel headerText="{i18n>helloPanel}" 
-    class="sapUiResponsiveMargin" 
-    width="auto">
+            class="sapUiResponsiveMargin" 
+            width="auto"
+            expandable="{device>/system/phone}"
+            expanded="{= !${device>/system/phone} }"> <!-- true if not on phone -->
         <content>
             <Button id="helloDialogButton"
             icon="sap-icon://action" 
