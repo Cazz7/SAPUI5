@@ -3,13 +3,15 @@ sap.ui.define([
     "sap/ui/core/UIComponent",
     "logaligroup/SAPUI5/model/Models",
     "sap/ui/model/resource/ResourceModel",
-    "./controller/HelloDialog"
+    "./controller/HelloDialog",
+    "sap/ui/Device"
 ],
 /**
  * @param {typeof sap.ui.core.UIComponent} UIComponent
  * @param {typeof sap.ui.model.resource.ResourceModel} ResourceModel
+ * @param {typeof sap.ui.Device} Device
  */
-function(UIComponent, Models, ResourceModel, HelloDialog){
+function(UIComponent, Models, ResourceModel, HelloDialog, Device){
 
     return UIComponent.extend("logaligroup.SAPUI5.Component",{
 
@@ -47,6 +49,15 @@ function(UIComponent, Models, ResourceModel, HelloDialog){
         //To open the dialog
         openHelloDialog:function(){
             this._helloDialog.open();
+        },
+        // returns class that determines content density class: cozy or compact
+        getContentDensityClass: function(){
+            if (!Device.support.touch){ //Checks whether or not on touch device
+                this._sContentDensityClass = "sapUiSizeCompact";
+            }else{
+                this._sContentDensityClass = "sapUiSizeCozy";
+            }
+            return this._sContentDensityClass;
         }        
     });
 });

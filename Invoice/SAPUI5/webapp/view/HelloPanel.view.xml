@@ -7,16 +7,17 @@
             class="sapUiResponsiveMargin" 
             width="auto"
             expandable="{device>/system/phone}"
-            expanded="{= !${device>/system/phone} }"> <!-- true if not on phone -->
+            expanded="{= !${device>/system/phone} }"
+            accessibleRole="Region"> <!-- true if not on phone -->
         <content>
             <Button id="helloDialogButton"
             icon="sap-icon://action" 
             text="{i18n>HelloDialogButton}" 
             press=".onOpenDialog"
-            class="sapUiSmallMarginEnd"/>        
+            class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>        
             <Button text="{i18n>showHelloButtonText}" 
             press=".onShowHello"
-            class="sapUiSmallMarginEnd"/>
+            class="sapUiSmallMarginEnd sapUiHideOnDesktop"/>
             <Input  value="{/recipient/name}"
             valueLiveUpdate="true"
             width="60%"/>

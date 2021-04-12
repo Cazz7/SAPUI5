@@ -4,8 +4,8 @@ sap.ui.define([
     "sap/ui/Device"
 ],
     /**
-     * @param {typeof "sap.ui.model.json.JSONModel} JSONModel
-     * @param {typeof "sap.ui.Device} Device
+     * @param {typeof sap.ui.model.json.JSONModel} JSONModel
+     * @param {typeof sap.ui.Device} Device
      */
     function (JSONModel, Device) {
         "use strict";
